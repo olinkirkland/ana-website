@@ -26,10 +26,6 @@ i.sm {
   font-size: 60%;
 }
 
-article {
-  background-color: $color-text;
-}
-
 h1.logo {
   color: $color-primary;
   font-family: Outfit, Helvetica, sans-serif;
@@ -50,6 +46,8 @@ hr {
 }
 
 nav {
+  max-width: 96rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,13 +98,11 @@ section {
   flex-direction: column;
   gap: 1rem;
   max-width: 96rem;
-  padding: 4rem 4rem;
+  padding: 2rem;
   margin: 0 auto;
 }
 
-section#hero {
-  color: $color-background;
-  background-color: $color-primary;
+.hero-background {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.4),
@@ -114,6 +110,11 @@ section#hero {
     ),
     url('../backgrounds/2.webp');
   background-size: cover;
+}
+
+section#hero {
+  color: $color-background;
+  // background-color: $color-primary;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -213,6 +214,7 @@ button.btn-icon {
 }
 
 footer {
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   background-color: $color-text;
@@ -332,5 +334,33 @@ footer {
 }
 
 .newsletter-prompt {
-  
+  width: 48rem;
+  background-color: $color-background;
+  color: $color-text;
+  padding: 2rem;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(-2rem);
+  margin-bottom: -2rem;
+  border: 1px solid $color-text;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $color-text;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    box-shadow: none;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+
+    &:focus {
+      outline: none;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
 }
