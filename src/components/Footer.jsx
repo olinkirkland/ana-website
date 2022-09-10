@@ -1,9 +1,11 @@
 import LanguageSelector from './LanguageSelector';
+import NewsletterForm from './NewsletterForm';
 import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   return (
     <footer>
+      <NewsletterForm />
       <section>
         <div className="social-container">
           <p>Follow us on social media!</p>

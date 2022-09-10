@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Account from './Account';
+import Alert from './components/Alert';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './Home';
@@ -13,6 +14,13 @@ export default function App() {
   return (
     <Router>
       <div>
+        <Alert
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio consectetur debitis deleniti, nulla quasi ipsa ea."
+          icon="gift"
+          onClick={() => {
+            console.log('clicked');
+          }}
+        />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
