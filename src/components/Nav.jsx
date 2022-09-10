@@ -8,16 +8,32 @@ export default function Nav() {
       </Link>
       <ul>
         <li>
-          <Link to="/link">Link 1</Link>
+          <Link to="/link">
+            <span>Studio</span>
+          </Link>
         </li>
         <li>
-          <Link to="/link">Link 2</Link>
+          <Link to="/link">
+            <i className="fas fa-chevron-down sm" />
+            <span>Workshops</span>
+          </Link>
         </li>
         <li>
-          <Link to="/link">Link 3</Link>
+          <Link to="/link">
+            <i className="fas fa-chevron-down sm" />
+            <span>Collections</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/link">
+            <i className="fas fa-images" />
+            <span>Gallery</span>
+          </Link>
         </li>
         <li className="cta">
-          <Link to="/link">Link 4</Link>
+          <Link to="/link">
+            <span>Commissions</span>
+          </Link>
         </li>
       </ul>
     </nav>
