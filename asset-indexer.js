@@ -1,8 +1,10 @@
-const fs = require('fs');
+import { readdirSync, writeFileSync } from 'fs';
 
 const assetPath = './public/assets/';
 
 // Create an array of all the files ./assets/images/
-var assets = fs.readdirSync(assetPath + '/images');
+var assets = readdirSync(assetPath + '/images');
 // Save assets to json
-fs.writeFileSync(assetPath + 'assets.json', JSON.stringify(assets));
+writeFileSync(assetPath + 'assets.json', JSON.stringify(assets));
+
+console.log('✅ Indexed assets to ' + assetPath + 'assets.json');
