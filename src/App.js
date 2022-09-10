@@ -12,7 +12,11 @@ export default function App() {
   useEffect(() => {}, []);
 
   return (
-    <Router>
+    <Router
+      basename={
+        window.location.hostname === 'localhost' ? '/' : '/ana-website/'
+      }
+    >
       <div>
         <Alert
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio consectetur debitis deleniti, nulla quasi ipsa ea."
