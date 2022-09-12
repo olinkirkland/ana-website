@@ -67,22 +67,67 @@ nav {
     align-items: center;
     padding-right: 1rem;
 
-    li > a {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: $color-text;
-      text-decoration: none;
-      padding: 1rem;
-      filter: brightness(2);
+    li {
+      position: relative;
+
+      > a {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: $color-text;
+        text-decoration: none;
+        padding: 1rem;
+        filter: brightness(2);
+
+        &:hover {
+          filter: brightness(1);
+        }
+      }
+
+      &:hover ul.dropdown {
+        display: flex;
+      }
+
+      > ul.dropdown {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        top: calc(100% - 0.4rem);
+        background-color: $color-background;
+        padding: 0.8rem;
+        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+        // border: 1px solid $color-text;
+        z-index: 1;
+
+        > li {
+          width: max-content;
+          max-width: 12rem;
+
+          > a {
+            padding: 0.4rem 0.8rem;
+            &:hover {
+              background-color: $color-text;
+              color: $color-background;
+              filter: brightness(1);
+            }
+          }
+        }
+      }
     }
 
     li.cta > a {
       background-color: $color-primary;
       color: $color-background;
       padding: 0.2rem 0.8rem;
-      // border-radius: 99px;
       filter: none;
+      transition: all 0.2s ease-in-out;
+      border: 1px solid $color-primary;
+
+      &:hover {
+        background-color: transparent;
+        color: $color-primary;
+      }
     }
   }
 }
@@ -140,7 +185,7 @@ a.link {
 
 button {
   font-family: Outfit;
-  background-color: $color-text;
+  background-color: transparent;
   color: $color-background;
   border: none;
   font-size: 1rem;
@@ -148,20 +193,35 @@ button {
   font-weight: thin;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
   transition: all 0.2s;
 
-  // border-radius: 99px;
   border: 1px solid $color-background;
+  line-height: 1.6;
   padding: 0.6rem 1.2rem;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 
+  &::after {
+    content: '➼';
+    display: inline-block;
+    width: 0;
+    margin-left: 0;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
   &:hover {
-    filter: brightness(1.1);
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+
+    &::after {
+      margin-left: 0.4rem;
+      opacity: 1;
+      width: 1rem;
+    }
   }
 
   &:active {
-    filter: brightness(0.9);
+    filter: brightness(0.7);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 

@@ -19,7 +19,7 @@ export default function App() {
     >
       <div>
         <Alert
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio consectetur debitis deleniti, nulla quasi ipsa ea."
+          text="Lorem ipsum €49 dolor sit amet adipis macing elit. Suscipit optio consectetur debitis deleniti, nulla quasi ipsa ea. *"
           icon="gift"
           onClick={() => {
             console.log('clicked');
