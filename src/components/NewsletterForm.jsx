@@ -5,7 +5,7 @@ export default function NewsletterForm() {
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum.</p>
       <form>
         <input type="text" placeholder="Your email address" />
-        <button type="submit">Sign up</button>
+        <button className="inverted" type="submit">Sign up</button>
       </form>
     </div>
   );

@@ -199,7 +199,12 @@ button {
   border: 1px solid $color-background;
   line-height: 1.6;
   padding: 0.6rem 1.2rem;
-  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+
+  &.inverted {
+    border-color: $color-text;
+    color: $color-text;
+  }
 
   &::after {
     content: '➼';
@@ -211,7 +216,7 @@ button {
   }
 
   &:hover {
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 
     &::after {
       margin-left: 0.4rem;
