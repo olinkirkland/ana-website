@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ana-website/static/css/main.bc833150.css",
-    "main.js": "/ana-website/static/js/main.f5e4c7c9.js",
+    "main.css": "/ana-website/static/css/main.d1a896e2.css",
+    "main.js": "/ana-website/static/js/main.7c1df43a.js",
     "static/media/2.webp": "/ana-website/static/media/2.087ae3505c7abcdddc4d.webp",
     "index.html": "/ana-website/index.html",
-    "main.bc833150.css.map": "/ana-website/static/css/main.bc833150.css.map",
-    "main.f5e4c7c9.js.map": "/ana-website/static/js/main.f5e4c7c9.js.map"
+    "main.d1a896e2.css.map": "/ana-website/static/css/main.d1a896e2.css.map",
+    "main.7c1df43a.js.map": "/ana-website/static/js/main.7c1df43a.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc833150.css",
-    "static/js/main.f5e4c7c9.js"
+    "static/css/main.d1a896e2.css",
+    "static/js/main.7c1df43a.js"
   ]
 }
