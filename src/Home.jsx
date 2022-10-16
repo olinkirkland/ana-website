@@ -14,8 +14,8 @@ export default function Home() {
 
           <div className="button-bar">
             {/* <button>Lessons</button> */}
-            <button>Explore the collections</button>
-            <button className="cta">Order a Commission</button>
+            <button className="with-arrow">Explore the collections</button>
+            <button className="with-arrow cta">Order a Commission</button>
           </div>
         </section>
       </div>
