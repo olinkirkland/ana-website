@@ -112,8 +112,10 @@ nav {
           > a {
             padding: 0.4rem 0.8rem;
             &:hover {
-              background-color: $color-text;
-              color: $color-background;
+              // background-color: $color-text;
+              // color: $color-background;
+              color: $color-primary;
+              text-decoration: underline;
               filter: brightness(1);
             }
           }
@@ -303,6 +305,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
+    margin-bottom: 2rem;
 
     hr {
       margin-bottom: 1.8rem;
