@@ -388,7 +388,10 @@ footer {
   align-items: center;
   gap: 0.2rem;
   margin-left: auto;
-  a {
+  button {
+    border: none;
+    box-shadow: none;
+    padding: 0;
     display: flex;
     align-items: center;
     img {
@@ -437,5 +440,40 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+*[tooltip] {
+  &::after {
+    content: attr(tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 12rem;
+    width: max-content;
+
+    background-color: $color-background;
+    border: 1px solid $color-text;
+    color: $color-text;
+    padding: 0.4rem 0.8rem;
+    text-transform: none;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    z-index: 999;
+    text-align: left;
+    border-radius: 3px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: margin-bottom 0.2s;
+    margin-bottom: 0rem;
+  }
+
+  &:hover::after {
+    pointer-events: all;
+    cursor: initial;
+    margin-bottom: 0.4rem;
+    opacity: 1;
   }
 }
