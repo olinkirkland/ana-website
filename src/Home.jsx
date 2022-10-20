@@ -1,4 +1,21 @@
+import Slider from './components/Slideshow';
+
 export default function Home() {
+  const sliderData = [
+    {
+      img: 'https://picsum.photos/800/400?image=0',
+      href: 'https://picsum.photos/800/400?image=0'
+    },
+    {
+      img: 'https://picsum.photos/800/400?image=1',
+      href: 'https://picsum.photos/800/400?image=1'
+    },
+    {
+      img: 'https://picsum.photos/800/400?image=2',
+      href: 'https://picsum.photos/800/400?image=2'
+    }
+  ];
+
   return (
     <article>
       <div className="hero-background">
@@ -17,11 +34,7 @@ export default function Home() {
       </div>
       <section>
         <h2>Gallery</h2>
-        <ul className="gallery">
-          <li>
-            <img src="https://picsum.photos/200/300" alt="" />
-          </li>
-        </ul>
+        <Slider data={sliderData} />
         <span>Mehrere Seiten - Mehrere “Geschichten” One Two Three…</span>
       </section>
       <section>

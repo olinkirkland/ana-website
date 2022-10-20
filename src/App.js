@@ -17,13 +17,6 @@ export default function App() {
       }
     >
       <div>
-        <Alert
-          text="Gratis Schnupperstunde - jetzt buchen! *"
-          icon="gift"
-          onClick={() => {
-            console.log('clicked');
-          }}
-        />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

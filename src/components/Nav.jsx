@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
+import Alert from './Alert';
 
 export default function Nav() {
   return (
     <nav>
+      <Alert
+        text="Gratis Schnupperstunde - jetzt buchen! *"
+        icon="gift"
+        onClick={() => {
+          console.log('clicked');
+        }}
+      />
       <div className="nav-content">
         <Link to="/">
           <h1 className="logo">Angelika Paints</h1>

@@ -52,6 +52,11 @@ hr {
 }
 
 nav {
+  position: fixed;
+  width: 100%;
+  background-color: $color-background;
+  z-index: 999;
+
   &::after {
     content: '';
     display: block;
@@ -169,7 +174,7 @@ section {
       rgba(0, 0, 0, 0.55),
       rgba(0, 0, 0, 0.75)
     ),
-    url('../assets/backgrounds/2.webp');
+    url('../assets/backgrounds/3.webp');
   background-size: cover;
 }
 
@@ -522,5 +527,26 @@ footer {
     cursor: initial;
     margin-bottom: 0.4rem;
     opacity: 1;
+  }
+}
+
+// Slideshow
+.slideshow {
+  border: 1px solid black;
+  position: relative;
+  padding: 0;
+
+  .btn-icon {
+    position: absolute;
+    top: 50%;
+    color: red;
+    transform: translateY(-50%);
+    aspect-ratio: 1;
+    width: 2.4rem;
+    left: 0;
+
+    &:nth-of-type(2) {
+      right: 0;
+    }
   }
 }
