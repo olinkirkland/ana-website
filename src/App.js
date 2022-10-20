@@ -18,7 +18,7 @@ export default function App() {
     >
       <div>
         <Alert
-          text="Lorem ipsum €49 dolor sit amet adipis macing elit. Suscipit optio consectetur debitis deleniti, nulla quasi ipsa ea. *"
+          text="Gratis Schnupperstunde - jetzt buchen! *"
           icon="gift"
           onClick={() => {
             console.log('clicked');

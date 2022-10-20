@@ -66,7 +66,7 @@ export default function Footer() {
         <section>
           <p>&copy; {new Date().getFullYear()} Angelika Paints</p>
           <LanguageSelector />
-          <a href="#" className="link">
+          <a href="/impressum" className="link">
             Impressum
           </a>
         </section>

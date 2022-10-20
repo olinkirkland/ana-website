@@ -37,16 +37,14 @@ Kreatives Gestalten ist mehr als nur sich bildlich auszudrücken. Bilder sind Ge
 Privater Unterricht oder Workshops werden individuell zugeschnitten und können auch für besondere Events gebucht werden. Kontaktieren Sie uns und wir rufen Sie gerne zurück, um Ihren Auftrag zu besprechen. 
 
 ### How Angelika Paints works
-Unterricht erfordert keine Vorkenntnisse und ist persönlich auf jeden Schüler zugeschnitten. Alle Materialkosten sind in den Unterrichtspreisen enthalten. Schreiben Sie uns über das Kontaktformular, um eine gratis Schnupperstunde zu buchen.
+  Unterricht erfordert keine Vorkenntnisse und ist persönlich auf jeden Schüler zugeschnitten. Alle Materialkosten sind in den Unterrichtspreisen enthalten. Schreiben Sie uns über das Kontaktformular, um eine gratis Schnupperstunde zu buchen.
 ### Contact information
-Address: Esslingen, Deutschland
-Phone: 0172.322.9840
-Email: me@angelikapaints.com
+  Address: Esslingen, Deutschland
+  Phone: 0172.322.9840
+  Email: me@angelikapaints.com
 
 Social profiles: instagram, facebook, twitter [links to them not available yet]
 
 ### Additional links [links not available yet]
 Creative Newsletter
 Privacy & terms
-
-
