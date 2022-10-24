@@ -18,23 +18,25 @@ export default function Slideshow({ data }) {
       <button className="btn-icon" onClick={prevSlide}>
         <i className="fa fa-chevron-left" />
       </button>
+
       <button className="btn-icon" onClick={nextSlide}>
         <i className="fa fa-chevron-right" />
       </button>
-      {data.map((slide, index) => {
-        return (
-          <div
-            className={index === current ? 'slide active' : 'slide'}
-            key={index}
-          >
-            {index === current && (
+
+      <div className="slideshow-slides">
+        {data.map((slide, index) => {
+          return (
+            <div
+              className={index === current ? 'slide active' : 'slide'}
+              key={index}
+            >
               <a href={slide.href}>
-                <img src={slide.img} alt="slide" />
+                <img src={slide.img} alt="No data" />
               </a>
-            )}
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

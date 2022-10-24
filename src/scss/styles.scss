@@ -553,4 +553,15 @@ footer {
       right: 0;
     }
   }
+
+  .slideshow-slides {
+    max-width: 64rem;
+    overflow: scroll;
+    // Scroll snap to each slide
+    scroll-snap-type: x mandatory;
+
+    display: flex;
+    > .slide {
+    }
+  }
 }
