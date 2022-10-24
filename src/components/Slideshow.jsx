@@ -30,7 +30,7 @@ export default function Slideshow({ data }) {
               className={index === current ? 'slide active' : 'slide'}
               key={index}
             >
-              <img src={slide.img} alt="No data" />
+              <img src={slide.img} alt={slide.img} />
             </div>
           );
         })}
