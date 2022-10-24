@@ -30,9 +30,7 @@ export default function Slideshow({ data }) {
               className={index === current ? 'slide active' : 'slide'}
               key={index}
             >
-              <a href={slide.href}>
-                <img src={slide.img} alt="No data" />
-              </a>
+              <img src={slide.img} alt="No data" />
             </div>
           );
         })}
