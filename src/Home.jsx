@@ -3,16 +3,16 @@ import Slider from './components/Slideshow';
 export default function Home() {
   const sliderData = [
     {
-      img: '/assets/1.webp',
-      href: 'https://picsum.photos/800/400?image=0'
+      img: 'assets/1.webp',
+      href: '#'
     },
     {
-      img: '/assets/2.webp',
-      href: 'https://picsum.photos/800/400?image=1'
+      img: 'assets/2.webp',
+      href: '#'
     },
     {
-      img: '/assets/3.webp',
-      href: 'https://picsum.photos/800/400?image=2'
+      img: 'assets/3.webp',
+      href: '#'
     }
   ];
 
