@@ -26,11 +26,9 @@ export default function Slideshow({ data }) {
       <div className="slideshow-slides">
         {data.map((slide, index) => {
           return (
-            <div
-              className={index === current ? 'slide active' : 'slide'}
-              key={index}
-            >
+            <div className="slide" key={index}>
               <img src={slide.img} alt={slide.img} />
+              
             </div>
           );
         })}

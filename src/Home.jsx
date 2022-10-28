@@ -3,15 +3,15 @@ import Slider from './components/Slideshow';
 export default function Home() {
   const sliderData = [
     {
-      img: 'assets/1.webp',
+      img: 'https://olinkirk.land/ana-website/assets/1.webp',
       href: '#'
     },
     {
-      img: 'assets/2.webp',
+      img: 'https://olinkirk.land/ana-website/assets/2.webp',
       href: '#'
     },
     {
-      img: 'assets/3.webp',
+      img: 'https://olinkirk.land/ana-website/assets/3.webp',
       href: '#'
     }
   ];

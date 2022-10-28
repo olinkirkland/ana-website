@@ -66,6 +66,21 @@ export default function Nav() {
               <span>Prints &amp; Commissions</span>
             </Link>
           </li>
+          <li>
+            <a className="link">
+              <i className="fas fa-chevron-down sm" />
+              <span>EN</span>
+              <i className="fas fa-globe-americas"></i>
+            </a>
+            <ul className="dropdown dropdown-align-right">
+              <li>
+                <a className="link">DE</a>
+              </li>
+              <li>
+                <a className="link">EN</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>

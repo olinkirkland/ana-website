@@ -108,6 +108,7 @@ nav {
 
         &:hover ul.dropdown {
           display: flex;
+          border-top: $color-secondary 4px solid;
         }
 
         > ul.dropdown {
@@ -120,6 +121,10 @@ nav {
           padding: 0.8rem;
           box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
           z-index: 1;
+
+          &.dropdown-align-right {
+            right: 0;
+          }
 
           > li {
             width: max-content;
@@ -202,6 +207,7 @@ section#hero {
 }
 
 a.link {
+  cursor: pointer;
   color: $color-primary;
 }
 
@@ -555,13 +561,21 @@ footer {
   }
 
   .slideshow-slides {
-    max-width: 64rem;
-    overflow: scroll;
+    height: 24rem;
+    max-width: 40rem;
+    overflow-x: scroll;
     // Scroll snap to each slide
     scroll-snap-type: x mandatory;
 
     display: flex;
     > .slide {
+      width: 100%;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
