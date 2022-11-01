@@ -1,7 +1,7 @@
-import Slider from './components/Slideshow';
+import Carousel from './components/Carousel';
 
 export default function Home() {
-  const sliderData = [
+  const carouselData = [
     {
       img: 'https://olinkirk.land/ana-website/assets/1.webp',
       href: '#'
@@ -33,8 +33,7 @@ export default function Home() {
         </section>
       </div>
       <section>
-        <h2>Gallery</h2>
-        <Slider data={sliderData} />
+        <Carousel data={carouselData} />
         <span>Mehrere Seiten - Mehrere “Geschichten” One Two Three…</span>
       </section>
       <section>

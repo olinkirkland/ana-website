@@ -32,7 +32,7 @@ export default function ContactForm() {
         <input type="text" placeholder="Subject *" />
         <textarea placeholder="The content of your message *" />
         <div className="flex full-width">
-          <p class="hint">Fields marked with * are required</p>
+          <p className="hint">Fields marked with * are required</p>
           <button className="inverted with-arrow" type="submit">
             Submit
           </button>

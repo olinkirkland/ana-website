@@ -65,7 +65,6 @@ export default function Footer() {
       <div className="bottom-footer">
         <section>
           <p>&copy; {new Date().getFullYear()} Angelika Paints</p>
-          <LanguageSelector />
           <a href="/impressum" className="link">
             Impressum
           </a>
