@@ -14,8 +14,16 @@ export default function Carousel({ data }) {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
+  // Cycle through the slides automatically
   useEffect(() => {
-    // Scroll .carousel-slides to the current slide
+    const interval = setInterval(() => {
+      setCurrent(current === length - 1 ? 0 : current + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [current]);
+
+  // Update the carousel when the data changes
+  useEffect(() => {
     const carouselEl = document.querySelector(`.${id}`);
     console.log(carouselEl);
     const slidesEl = carouselEl.querySelector('.carousel-slides');
@@ -30,9 +38,16 @@ export default function Carousel({ data }) {
       <div className="carousel-slides">
         {data.map((slide, index) => {
           return (
-            <div className="slide" data-index={index} key={index}>
+            <a
+              href={slide.href}
+              target={slide.openInNewTab ? '_blank' : '_self'}
+              rel="noopener noreferrer"
+              className="slide"
+              data-index={index}
+              key={index}
+            >
               <img src={slide.img} alt={slide.img} />
-            </div>
+            </a>
           );
         })}
       </div>

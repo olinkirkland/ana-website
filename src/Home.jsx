@@ -1,18 +1,29 @@
+import { useEffect } from 'react';
 import Carousel from './components/Carousel';
 
+function logClick(e) {
+  console.log('Clicked:', e.target);
+}
+
 export default function Home() {
+  useEffect(() => {
+    document.addEventListener('click', logClick);
+    return () => document.removeEventListener('click', logClick);
+  }, []);
+
   const carouselData = [
     {
       img: 'https://olinkirk.land/ana-website/assets/1.webp',
-      href: '#'
+      href: 'http://www.google.com'
     },
     {
       img: 'https://olinkirk.land/ana-website/assets/2.webp',
-      href: '#'
+      href: 'http://www.google.com'
     },
     {
       img: 'https://olinkirk.land/ana-website/assets/3.webp',
-      href: '#'
+      href: 'http://www.google.com',
+      openInNewTab: true
     }
   ];
 

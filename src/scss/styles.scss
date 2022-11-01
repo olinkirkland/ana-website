@@ -568,6 +568,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 
     .carousel-controls-arrows {
       position: absolute;
@@ -577,6 +578,7 @@ footer {
       top: 50%;
       transform: translateY(-50%);
       > button.btn-icon {
+        pointer-events: all;
         color: white;
         aspect-ratio: 1;
         width: 2.4rem;
@@ -590,6 +592,7 @@ footer {
     }
 
     .carousel-dots {
+      pointer-events: none;
       display: flex;
       width: 100%;
       justify-content: center;
@@ -597,6 +600,7 @@ footer {
       bottom: 2.4rem;
       gap: 0.8rem;
       button.btn-icon {
+        pointer-events: all;
         color: #ffffff80;
         aspect-ratio: 1;
         margin: 0;
