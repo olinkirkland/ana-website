@@ -5,6 +5,8 @@ export default function Carousel({ data }) {
   const id = 'carousel--' + Math.random().toString(36).substring(2);
   const length = data.length;
   const [current, setCurrent] = useState(0);
+  const [dotIndex, setDotIndex] = useState(0);
+  const [pauseCycle, setPauseCycle] = useState(false);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -13,14 +15,6 @@ export default function Carousel({ data }) {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-
-  // Cycle through the slides automatically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [current]);
 
   // Update the carousel when the data changes
   useEffect(() => {
@@ -39,10 +33,36 @@ export default function Carousel({ data }) {
     const handleScroll = () => {
       // Set the current slide based on the scroll position
       const c = Math.round(slidesEl.scrollLeft / carouselEl.offsetWidth);
-      if (c !== current) setCurrent(c);
+      if (c !== current) setDotIndex(c);
     };
     slidesEl.addEventListener('scroll', handleScroll);
     return () => slidesEl.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setDotIndex(current);
+  }, [current]);
+
+  // Cycle through the slides automatically
+  useEffect(() => {
+    if (pauseCycle) return;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [pauseCycle]);
+
+  // Pause the cycle when the user hovers over the carousel
+  useEffect(() => {
+    const carouselEl = document.querySelector(`.${id}`);
+    const handleMouseEnter = () => setPauseCycle(true);
+    const handleMouseLeave = () => setPauseCycle(false);
+    carouselEl.addEventListener('mouseenter', handleMouseEnter);
+    carouselEl.addEventListener('mouseleave', handleMouseLeave);
+    return () => {
+      carouselEl.removeEventListener('mouseenter', handleMouseEnter);
+      carouselEl.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
 
   return (

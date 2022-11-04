@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <article>
-      <div className="hero-background">
+      <div className="hero-container">
         <section id="hero">
           <h1 className="logo">Angelika Paints</h1>
           <p>
