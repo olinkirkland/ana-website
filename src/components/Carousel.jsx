@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 export default function Carousel({ data }) {
   // data = [{img:'foo.png', href:'/link.html'}, {img:'bar.png', href:'/link.html'}]
-  const [id] = useState('carousel--' + Math.random().toString(36).substring(2));
-  const [current, setCurrent] = useState(0);
+  const id = 'carousel--' + Math.random().toString(36).substring(2);
   const length = data.length;
+  const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -25,13 +25,25 @@ export default function Carousel({ data }) {
   // Update the carousel when the data changes
   useEffect(() => {
     const carouselEl = document.querySelector(`.${id}`);
-    console.log(carouselEl);
     const slidesEl = carouselEl.querySelector('.carousel-slides');
     slidesEl.scrollTo({
       left: current * carouselEl.offsetWidth,
       behavior: 'smooth'
     });
   }, [current]);
+
+  // Update the carousel dots when the user scrolls
+  useEffect(() => {
+    const carouselEl = document.querySelector(`.${id}`);
+    const slidesEl = carouselEl.querySelector('.carousel-slides');
+    const handleScroll = () => {
+      // Set the current slide based on the scroll position
+      const c = Math.round(slidesEl.scrollLeft / carouselEl.offsetWidth);
+      if (c !== current) setCurrent(c);
+    };
+    slidesEl.addEventListener('scroll', handleScroll);
+    return () => slidesEl.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className={`carousel ${id}`}>

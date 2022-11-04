@@ -4,11 +4,15 @@ import Alert from './components/Alert';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './Home';
+import { initializeAppLanguage } from './locale/locale';
 
 export default function App() {
   const [data, setData] = React.useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // Determine the language to use
+    initializeAppLanguage();
+  }, []);
 
   return (
     <Router
