@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './Home';
-import { initializeAppLanguage } from './locale/locale';
 
 export default function App() {
   const [data, setData] = React.useState([]);
-
-  useEffect(() => {
-    // Determine the language to use
-    initializeAppLanguage();
-  }, []);
 
   return (
     <Router

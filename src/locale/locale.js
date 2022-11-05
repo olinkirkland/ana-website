@@ -10,7 +10,6 @@ export function initializeAppLanguage() {
 }
 
 export function setAppLanguage(value) {
-  console.log('Setting language to: ' + value);
   currentLanguage = value;
   localStorage.setItem('language', value);
   if (value === 'en') translations = en;
@@ -20,7 +19,8 @@ export function setAppLanguage(value) {
 export function text(key, ...args) {
   if (!translations) initializeAppLanguage();
   const value = translations[key] ? translations[key] : `[${key}]`;
-  if (!translations[key]) console.warn(key);
+  if (!translations[key])
+    console.warn(`Missing ${currentLanguage} translation for key: ${key}`);
   // Replace all instances of '%%' in the string with the passed in arguments
   return value.replace(/%%/g, () => args.shift());
 }

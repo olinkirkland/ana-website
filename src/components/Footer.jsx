@@ -1,5 +1,4 @@
 import ContactForm from './ContactForm';
-import LanguageSelector from './LanguageSelector';
 import SocialLinks from './SocialLinks';
 
 export default function Footer() {
