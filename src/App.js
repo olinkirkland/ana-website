@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Alert from './components/Alert';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Home from './Home';

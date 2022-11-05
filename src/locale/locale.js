@@ -18,6 +18,7 @@ export function setAppLanguage(value) {
 }
 
 export function text(key, ...args) {
+  if (!translations) initializeAppLanguage();
   const value = translations[key] ? translations[key] : `[${key}]`;
   if (!translations[key]) console.warn(key);
   // Replace all instances of '%%' in the string with the passed in arguments

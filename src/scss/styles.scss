@@ -98,7 +98,15 @@ nav {
       li {
         position: relative;
 
-        > a {
+        &.language-selector {
+          > button > span {
+            text-transform: uppercase;
+            margin-right: 0.4rem;
+          }
+        }
+
+        > a,
+        button {
           display: flex;
           align-items: center;
           gap: 0.4rem;
@@ -107,13 +115,24 @@ nav {
           padding: 1rem;
           filter: brightness(2);
 
+          // Overwrite button styles
+          border: none;
+          box-shadow: none;
+          margin: 0;
+
           &:hover {
             filter: brightness(1);
+          }
+
+          > i:first-of-type {
+            font-size: 1rem;
+            margin-right: 0.4rem;
           }
         }
 
         &:hover ul.dropdown {
           display: flex;
+          min-width: 8rem;
           border-top: $color-secondary 4px solid;
         }
 
@@ -137,7 +156,8 @@ nav {
             width: max-content;
             max-width: 20rem;
 
-            > a {
+            > a,
+            button {
               padding: 0.4rem 0.8rem;
               &:hover {
                 color: $color-primary;
@@ -220,11 +240,6 @@ section#hero {
   }
 }
 
-a.link {
-  cursor: pointer;
-  color: $color-primary;
-}
-
 button {
   font-family: Outfit;
   background-color: transparent;
@@ -290,6 +305,11 @@ button.btn-icon {
   &:active {
     box-shadow: none;
   }
+}
+
+a.link {
+  cursor: pointer;
+  color: $color-primary;
 }
 
 .alert {

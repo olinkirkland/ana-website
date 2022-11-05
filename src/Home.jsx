@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import Carousel from './components/Carousel';
+import { text } from './locale/locale';
 
 export default function Home() {
   const carouselData = [
@@ -22,15 +22,11 @@ export default function Home() {
     <article>
       <div className="hero-container">
         <section id="hero">
-          <h1 className="logo">Angelika Paints</h1>
-          <p>
-            Angelika Schäfer is an experienced artist and educator in Esslingen,
-            Germany offering original and commissioned artwork, private lessons,
-            and creative workshops.
-          </p>
+          <h1 className="logo">{text('title')}</h1>
+          <p>{text('hero-subtitle')}</p>
           <div className="button-bar">
-            <button className="with-arrow">Explore the artwork</button>
-            <button className="with-arrow cta">Order a Commission</button>
+            <button className="with-arrow">{text('hero-cta-1')}</button>
+            <button className="with-arrow cta">{text('hero-cta-2')}</button>
           </div>
         </section>
       </div>

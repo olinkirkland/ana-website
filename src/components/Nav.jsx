@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { currentLanguage, setAppLanguage, text } from '../locale/locale';
 import Alert from './Alert';
 
 export default function Nav() {
+  const [language, setLanguage] = useState(currentLanguage);
+
   return (
     <nav>
       <Alert
-        text="Gratis Schnupperstunde - jetzt buchen! *"
+        text={text('alert-promotion-schnupperstunde')}
         icon="gift"
         onClick={() => {
           console.log('clicked');
@@ -13,7 +17,7 @@ export default function Nav() {
       />
       <div className="nav-content">
         <Link to="/">
-          <h1 className="logo">Angelika Paints</h1>
+          <h1 className="logo">{text('title')}</h1>
         </Link>
         <ul>
           <li>
@@ -57,7 +61,6 @@ export default function Nav() {
           </li>
           <li>
             <Link to="/link">
-              <i className="fas fa-images" />
               <span>Gallery</span>
             </Link>
           </li>
@@ -66,18 +69,34 @@ export default function Nav() {
               <span>Prints &amp; Commissions</span>
             </Link>
           </li>
-          <li>
-            <a className="link">
+          <li className="language-selector">
+            <button className="link">
               <i className="fas fa-chevron-down sm" />
-              <span>EN</span>
+              <span className="capitalize">{currentLanguage}</span>
               <i className="fas fa-globe-americas"></i>
-            </a>
+            </button>
             <ul className="dropdown dropdown-align-right">
               <li>
-                <a className="link">DE</a>
+                <button
+                  className="link"
+                  onClick={() => {
+                    setAppLanguage('de');
+                    window.location.reload();
+                  }}
+                >
+                  DE
+                </button>
               </li>
               <li>
-                <a className="link">EN</a>
+                <button
+                  className="link"
+                  onClick={() => {
+                    setAppLanguage('en');
+                    window.location.reload();
+                  }}
+                >
+                  EN
+                </button>
               </li>
             </ul>
           </li>
