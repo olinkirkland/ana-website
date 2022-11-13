@@ -356,7 +356,7 @@ footer {
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 
   ul.site-map {
@@ -588,11 +588,37 @@ footer {
       min-width: 100%;
       min-height: 100%;
       scroll-snap-align: center;
+      position: relative;
 
       > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      > .slide-content {
+        background-color: #00000080;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        line-height: initial;
+        gap: 1rem;
+
+        h1 {
+          font-family: 'Yeseva One', serif;
+          font-weight: bold;
+          font-size: 4rem;
+        }
+
+        * {
+          color: $color-background;
+        }
       }
     }
   }
@@ -609,15 +635,15 @@ footer {
       display: flex;
       justify-content: space-between;
       width: 100%;
+      height: 100%;
       top: 50%;
       transform: translateY(-50%);
       > button.btn-icon {
         pointer-events: all;
         color: #ffffff80;
         aspect-ratio: 1;
-        width: 2.4rem;
-        margin: 0.8rem;
-        border-radius: 5px;
+        width: fit-content;
+        padding: 1.6rem;
 
         &:hover {
           color: #ffffff;
@@ -634,23 +660,26 @@ footer {
       padding: 0.8rem;
       display: flex;
       gap: 0.4rem;
-      border-radius: 55px;
       background-color: #00000000;
       transition: background-color 0.2s;
+      line-height: 0;
 
-      button.btn-icon {
+      button.carousel-dot {
         pointer-events: all;
         color: #ffffff80;
         margin: 0;
-
-        &:hover {
-          color: #ffffff;
-        }
-
+        padding: 0;
+        display: block;
+        width: 2rem;
+        height: 0.6rem;
+        border: none;
         line-height: 0;
 
-        i {
-          font-size: 1.2rem;
+        background-color: #ffffff40;
+
+        &.carousel-dot--active,
+        &:hover {
+          background-color: #ffffff90;
         }
       }
     }

@@ -1,19 +1,18 @@
 import { useEffect, useState } from 'react';
 
 export default function Carousel({ data }) {
-  // data = [{img:'foo.png', href:'/link.html'}, {img:'bar.png', href:'/link.html'}]
+  // data = [{img:'foo.png', href:'/link.html', title: 'Slide 1', description: 'This is the first slide', ctas: [{text: 'Click here', primary: 'true'}]}]
   const id = 'carousel--' + Math.random().toString(36).substring(2);
-  const length = data.length;
   const [current, setCurrent] = useState(0);
   const [dotIndex, setDotIndex] = useState(0);
   const [pauseCycle, setPauseCycle] = useState(false);
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    setCurrent(current === data.length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    setCurrent(current === 0 ? data.length - 1 : current - 1);
   };
 
   // Update the carousel when the data changes
@@ -33,7 +32,7 @@ export default function Carousel({ data }) {
     const handleScroll = () => {
       // Set the current slide based on the scroll position
       const c = Math.round(slidesEl.scrollLeft / carouselEl.offsetWidth);
-      if (c !== current) setDotIndex(c);
+      setDotIndex(c);
     };
     slidesEl.addEventListener('scroll', handleScroll);
     return () => slidesEl.removeEventListener('scroll', handleScroll);
@@ -47,7 +46,7 @@ export default function Carousel({ data }) {
   useEffect(() => {
     if (pauseCycle) return;
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
+      setCurrent((prev) => (prev === data.length - 1 ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(interval);
   }, [pauseCycle]);
@@ -79,6 +78,23 @@ export default function Carousel({ data }) {
               key={index}
             >
               <img src={slide.img} alt={slide.img} />
+
+              <div className="slide-content">
+                <h1>{slide.title}</h1>
+                <p>{slide.description}</p>
+                <div className="button-bar">
+                  {slide.ctas.map((cta, index) => {
+                    return (
+                      <button
+                        className={`with-arrow ${cta.primary ? 'cta' : ''}`}
+                        key={index}
+                      >
+                        {cta.text}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </a>
           );
         })}
@@ -99,16 +115,12 @@ export default function Carousel({ data }) {
           {data.map((slide, index) => {
             return (
               <button
-                className="btn-icon"
+                className={`carousel-dot ${
+                  index === dotIndex ? 'carousel-dot--active' : ''
+                }`}
                 onClick={() => setCurrent(index)}
                 key={index}
-              >
-                <i
-                  className={`fa ${
-                    index === current ? 'fa-circle' : 'fa-circle-o'
-                  }`}
-                />
-              </button>
+              ></button>
             );
           })}
         </div>

@@ -5,22 +5,36 @@ export default function Home() {
   const carouselData = [
     {
       img: 'https://olinkirk.land/ana-website/assets/1.webp',
-      href: 'http://www.google.com'
+      href: 'http://www.google.com',
+      openInNewTab: true,
+      title: 'Slide 1',
+      description: 'This is the first slide',
+      ctas: [{ text: 'Click here', primary: true }]
     },
     {
       img: 'https://olinkirk.land/ana-website/assets/2.webp',
-      href: 'http://www.google.com'
+      href: 'http://www.google.com',
+      openInNewTab: true,
+      title: 'Slide 2',
+      description: 'This is the second slide',
+      ctas: [
+        { text: 'Click here', primary: false },
+        { text: 'Click here', primary: true }
+      ]
     },
     {
       img: 'https://olinkirk.land/ana-website/assets/3.webp',
       href: 'http://www.google.com',
-      openInNewTab: true
+      openInNewTab: true,
+      title: 'Slide 3',
+      description: 'This is the third slide',
+      ctas: [{ text: 'Click here', primary: false }]
     }
   ];
 
   return (
     <article>
-      <div className="hero-container">
+      {/* <div className="hero-container">
         <section id="hero">
           <h1 className="logo">{text('title')}</h1>
           <p>{text('hero-subtitle')}</p>
@@ -29,9 +43,11 @@ export default function Home() {
             <button className="with-arrow cta">{text('hero-cta-2')}</button>
           </div>
         </section>
+      </div> */}
+      <div className="hero-container">
+        <Carousel data={carouselData} />
       </div>
       <section>
-        <Carousel data={carouselData} />
         <span>Mehrere Seiten - Mehrere “Geschichten” One Two Three…</span>
       </section>
       <section>
