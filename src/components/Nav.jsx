@@ -5,6 +5,11 @@ import Alert from './Alert';
 
 export default function Nav() {
   const [language, setLanguage] = useState(currentLanguage);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const onClickHamburger = () => {
+    setShowMobileNav(!showMobileNav);
+  };
 
   return (
     <nav>
@@ -20,7 +25,7 @@ export default function Nav() {
         <Link to="/">
           <h1 className="logo">{text('title')}</h1>
         </Link>
-        <ul>
+        <ul className={showMobileNav && 'show-mobile-nav'}>
           <li>
             <Link to="/link">
               <span>Studio</span>
@@ -102,7 +107,7 @@ export default function Nav() {
             </ul>
           </li>
         </ul>
-        <button className="hamburger btn-icon">
+        <button className="hamburger btn-icon" onClick={onClickHamburger}>
           <i className="fas fa-bars"></i>
         </button>
       </div>

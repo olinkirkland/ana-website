@@ -2,14 +2,51 @@
 
 // Media queries
 @media (max-width: 1024px) {
+  button.with-arrow::after {
+    content: '';
+    position: absolute;
+  }
+
   nav {
+    .nav-content > a {
+      width: 100%;
+      h1.logo {
+        font-size: 2.8rem;
+        text-align: center;
+      }
+    }
+
+    .nav-content {
+      position: relative;
+    }
+
     button.hamburger {
       display: block;
+      position: absolute;
+      right: 0.8rem;
     }
 
     .nav-content > ul {
-      display: none;
       position: absolute;
+
+      background-color: $color-background;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      padding: 2rem;
+      padding-top: 8rem;
+      height: 100vh;
+      transition: all 0.3s;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &.show-mobile-nav {
+        transform: translateX(0);
+      }
+    }
+
+    &::after {
+      background-position: 25% 0;
     }
   }
 

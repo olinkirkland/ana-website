@@ -6,6 +6,7 @@ export default function Carousel({ data }) {
   const [current, setCurrent] = useState(0);
   const [dotIndex, setDotIndex] = useState(0);
   const [pauseCycle, setPauseCycle] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const nextSlide = () => {
     setCurrent(current === data.length - 1 ? 0 : current + 1);
@@ -15,7 +16,7 @@ export default function Carousel({ data }) {
     setCurrent(current === 0 ? data.length - 1 : current - 1);
   };
 
-  // Update the carousel when the data changes
+  // Update the slides
   useEffect(() => {
     const carouselEl = document.querySelector(`.${id}`);
     const slidesEl = carouselEl.querySelector('.carousel-slides');
@@ -35,6 +36,7 @@ export default function Carousel({ data }) {
       setDotIndex(c);
     };
     slidesEl.addEventListener('scroll', handleScroll);
+
     return () => slidesEl.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -42,9 +44,9 @@ export default function Carousel({ data }) {
     setDotIndex(current);
   }, [current]);
 
-  // Cycle through the slides automatically
+  // Cycle through the slides automatically if the user is not interacting with the carousel
   useEffect(() => {
-    if (pauseCycle) return;
+    if (pauseCycle || isMobile) return;
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === data.length - 1 ? 0 : prev + 1));
     }, 5000);
@@ -56,11 +58,16 @@ export default function Carousel({ data }) {
     const carouselEl = document.querySelector(`.${id}`);
     const handleMouseEnter = () => setPauseCycle(true);
     const handleMouseLeave = () => setPauseCycle(false);
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
     carouselEl.addEventListener('mouseenter', handleMouseEnter);
     carouselEl.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
     return () => {
       carouselEl.removeEventListener('mouseenter', handleMouseEnter);
       carouselEl.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -82,6 +89,7 @@ export default function Carousel({ data }) {
               <div className="slide-content">
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
+
                 <div className="button-bar">
                   {slide.ctas.map((cta, index) => {
                     return (
