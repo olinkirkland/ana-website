@@ -607,6 +607,9 @@ footer {
       display: none;
     }
 
+    // Prevent vertical scroll
+    overflow-y: hidden;
+
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 
