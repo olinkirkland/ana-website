@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { currentLanguage, setAppLanguage, text } from '../locale/locale';
@@ -9,6 +10,22 @@ export default function Nav() {
 
   const onClickHamburger = () => {
     setShowMobileNav(!showMobileNav);
+  };
+
+  useEffect(() => {
+    // body.no-scroll
+    if (showMobileNav) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [showMobileNav]);
+
+  const openDropdown = (e) => {
+    // Toggle the class dropdown--open on the target's ul.dropdown sibling
+    const targetEl = e.target.closest('button');
+    const siblingEl = targetEl.nextElementSibling;
+    siblingEl.classList.toggle('dropdown--open');
   };
 
   return (
@@ -25,17 +42,18 @@ export default function Nav() {
         <Link to="/">
           <h1 className="logo">{text('title')}</h1>
         </Link>
-        <ul className={showMobileNav && 'show-mobile-nav'}>
+        {showMobileNav && <div className="shade"></div>}
+        <ul className={showMobileNav ? 'show-mobile-nav' : ''}>
           <li>
             <Link to="/link">
               <span>Studio</span>
             </Link>
           </li>
           <li>
-            <Link to="/link">
+            <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
               <span>Workshops</span>
-            </Link>
+            </button>
             <ul className="dropdown">
               <li>
                 <Link to="/link">Lorem ipsum dolor sit amet</Link>
@@ -49,10 +67,10 @@ export default function Nav() {
             </ul>
           </li>
           <li>
-            <Link to="/link">
+            <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
               <span>Collections</span>
-            </Link>
+            </button>
             <ul className="dropdown">
               <li>
                 <Link to="/link">Quia natus</Link>
@@ -76,7 +94,7 @@ export default function Nav() {
             </Link>
           </li>
           <li className="language-selector">
-            <button className="link">
+            <button className="link" onClick={openDropdown}>
               <i className="fas fa-chevron-down sm" />
               <span className="capitalize">{currentLanguage}</span>
               <i className="fas fa-globe-americas"></i>
