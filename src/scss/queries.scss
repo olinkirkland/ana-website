@@ -55,7 +55,7 @@
           position: static;
 
           &:hover {
-            display: initial !important;
+            display: unset !important;
           }
 
           li {
