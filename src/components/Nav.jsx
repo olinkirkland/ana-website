@@ -15,6 +15,7 @@ export default function Nav() {
           console.log('clicked');
         }}
       />
+
       <div className="nav-content">
         <Link to="/">
           <h1 className="logo">{text('title')}</h1>
@@ -101,6 +102,9 @@ export default function Nav() {
             </ul>
           </li>
         </ul>
+        <button className="hamburger btn-icon">
+          <i className="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
   );

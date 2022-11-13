@@ -1,0 +1,28 @@
+@import 'colors';
+
+// Media queries
+@media (max-width: 1024px) {
+  nav {
+    button.hamburger {
+      display: block;
+    }
+
+    .nav-content > ul {
+      display: none;
+      position: absolute;
+    }
+  }
+
+  footer {
+    width: 100%;
+
+    .form {
+      width: 100%;
+      border: none;
+    }
+  }
+
+  footer ul.site-map {
+    grid-template-columns: 1fr;
+  }
+}
