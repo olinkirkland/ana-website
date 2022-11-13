@@ -46,17 +46,23 @@
         transform: translateX(0);
       }
 
+      a:hover,
+      button:hover {
+        filter: brightness(2) !important;
+      }
+
       > li {
         width: 100%;
+
+        &:hover ul.dropdown:not(.dropdown--open) {
+          display: none;
+        }
+
         ul.dropdown {
           border: 1px solid #00000040 !important;
           width: 100%;
           box-shadow: none;
           position: static;
-
-          &:hover {
-            display: unset !important;
-          }
 
           li {
             width: 100%;
