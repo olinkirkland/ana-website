@@ -22,7 +22,6 @@ export default function Nav() {
   }, [showMobileNav]);
 
   const openDropdown = (e) => {
-    // Toggle the class dropdown--open on the target's ul.dropdown sibling
     const targetEl = e.target.closest('button');
     const siblingEl = targetEl.nextElementSibling;
     siblingEl.classList.toggle('dropdown--open');

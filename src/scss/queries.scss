@@ -54,6 +54,10 @@
           box-shadow: none;
           position: static;
 
+          &:hover {
+            display: initial !important;
+          }
+
           li {
             width: 100%;
             a {
