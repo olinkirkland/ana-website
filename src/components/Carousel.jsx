@@ -51,7 +51,7 @@ export default function Carousel({ data }) {
       setCurrent((prev) => (prev === data.length - 1 ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(interval);
-  }, [pauseCycle]);
+  }, [pauseCycle, isMobile]);
 
   // Pause the cycle when the user hovers over the carousel
   useEffect(() => {
