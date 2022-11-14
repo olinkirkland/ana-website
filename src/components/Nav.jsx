@@ -41,7 +41,9 @@ export default function Nav() {
         <Link to="/">
           <h1 className="logo">{text('title')}</h1>
         </Link>
-        {showMobileNav && <div className="shade"></div>}
+        {showMobileNav && (
+          <div className="shade" onClick={() => setShowMobileNav(false)}></div>
+        )}
         <ul className={showMobileNav ? 'show-mobile-nav' : ''}>
           <li>
             <Link to="/link">
@@ -125,7 +127,7 @@ export default function Nav() {
           </li>
         </ul>
         <button className="hamburger btn-icon" onClick={onClickHamburger}>
-          <i className="fas fa-bars"></i>
+          <i className={`fas ${showMobileNav ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
       </div>
     </nav>
