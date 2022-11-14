@@ -24,6 +24,15 @@ export default function Nav() {
   const openDropdown = (e) => {
     const targetEl = e.target.closest('button');
     const siblingEl = targetEl.nextElementSibling;
+
+    // Close all dropdowns except for siblingEl
+    const dropdowns = document.querySelectorAll('.dropdown--open');
+    dropdowns.forEach((dropdown) => {
+      if (dropdown !== siblingEl) {
+        dropdown.classList.remove('dropdown--open');
+      }
+    });
+
     siblingEl.classList.toggle('dropdown--open');
   };
 
@@ -126,7 +135,7 @@ export default function Nav() {
             </ul>
           </li>
         </ul>
-        <button className="hamburger btn-icon" onClick={onClickHamburger}>
+        <button className={'hamburger btn-icon'} onClick={onClickHamburger}>
           <i className={`fas ${showMobileNav ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
       </div>

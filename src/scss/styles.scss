@@ -144,17 +144,12 @@ nav {
           box-shadow: none;
           margin: 0;
 
-          &:hover {
-            filter: brightness(0);
-          }
-
           > i:first-of-type {
             font-size: 1rem;
             margin-right: 0.4rem;
           }
         }
 
-        &:hover ul.dropdown,
         ul.dropdown.dropdown--open {
           display: flex;
           min-width: 8rem;
